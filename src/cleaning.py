@@ -1,20 +1,9 @@
-"""
-Data Cleaning Module
-Handles missing values, duplicates, and basic data cleaning.
-"""
-
 import pandas as pd
 import numpy as np
 
 
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Handle missing values by filling numerical columns with median
-    and categorical columns with 'Unknown'.
-    
-    Args:
-        df: Input DataFrame
-        
+    """ Handle missing values by filling numerical columns with median and categorical columns with 'Unknown'.
     Returns:
         DataFrame with missing values handled
     """
@@ -34,10 +23,8 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
 def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove duplicate rows from the dataset.
-    
     Args:
         df: Input DataFrame
-        
     Returns:
         DataFrame with duplicates removed
     """
@@ -50,13 +37,10 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def remove_unnecessary_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove columns that are not needed for analysis.
-    
+    """ Remove columns that are not needed for analysis.
     Args:
         df: Input DataFrame
-        
-    Returns:
+  Returns:
         DataFrame with unnecessary columns removed
     """
     cols_to_drop = ['img_link', 'product_link']
@@ -71,12 +55,10 @@ def remove_unnecessary_columns(df: pd.DataFrame) -> pd.DataFrame:
 
 def clean_text_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Clean and standardize text columns.
-    
+    Clean and standardize text columns
     Args:
         df: Input DataFrame
-        
-    Returns:
+ Returns:
         DataFrame with cleaned text columns
     """
     df = df.copy()
